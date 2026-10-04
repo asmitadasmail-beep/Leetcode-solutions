@@ -18,6 +18,12 @@ class Solution {
         else{
             return BS(nums,target,p+1,nums.length-1);
         }
+        /**or for the above 2 cases, can also write:-
+        if(target >= nums[0]){
+            return BS(nums,target,0,p-1);
+        }
+        return BS(nums,target,p+1,nums.length-1);
+        */
     }
     int pivot(int[] arr){
         int start=0;
