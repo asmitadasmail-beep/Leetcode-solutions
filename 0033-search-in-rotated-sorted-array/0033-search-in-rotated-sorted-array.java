@@ -1,6 +1,16 @@
 class Solution {
     public int search(int[] nums, int target) {
         int p = pivot(nums);
+        if(p==-1){
+            //that means array is not rotated
+            //just do normal binary search
+            return BS(nums,target,0,nums.length-1);
+        }
+        //if pivot is found, you have found 2 asc sorted arrays
+        //3 cases now
+        if(nums[p]==target){
+            return p;
+        }
         int positionF = BS(nums,target,0,p);
         if(positionF!=-1){
             return positionF;
